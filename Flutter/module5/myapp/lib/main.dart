@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,12 +14,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -25,9 +29,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentPageIndex = 0;
   final List<Widget> _pages = [
-    PageWidget(0, Colors.blue),
-    PageWidget(1, Colors.green),
-    PageWidget(2, Colors.orange),
+    const PageWidget(0, Colors.blue),
+    const PageWidget(1, Colors.green),
+    const PageWidget(2, Colors.orange),
   ];
 
   void _selectPage(int index) {
@@ -40,27 +44,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sayed Hossain Jobayer'),
+        title: const Text('Sayed Hossain Jobayer'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             ListTile(
-              title: Text('Homepage'),
+              title: const Text('Homepage'),
               onTap: () {
                 _selectPage(0);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Second page'),
+              title: const Text('Second page'),
               onTap: () {
                 _selectPage(1);
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Third page'),
+              title: const Text('Third page'),
               onTap: () {
                 _selectPage(2);
                 Navigator.pop(context);
@@ -73,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentPageIndex,
         onTap: _selectPage,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Homepage',
@@ -96,7 +100,7 @@ class PageWidget extends StatelessWidget {
   final int pageNumber;
   final Color color;
 
-  PageWidget(this.pageNumber, this.color);
+  const PageWidget(this.pageNumber, this.color, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -104,12 +108,12 @@ class PageWidget extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: color,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: Center(
         child: Text(
           'Page $pageNumber',
-          style: TextStyle(fontSize: 24),
+          style: const TextStyle(fontSize: 24),
         ),
       ),
     );
