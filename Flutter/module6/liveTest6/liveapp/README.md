@@ -1,16 +1,4 @@
 # liveapp
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1686591155](https://github.com/BeingCyborg/OSTAD/assets/62154398/5d0afeaa-1b6c-4e35-b54d-054966e94067)
+![Screenshot_1686591151](https://github.com/BeingCyborg/OSTAD/assets/62154398/1f4ca5ce-e593-4b00-8397-638287a1e804)
