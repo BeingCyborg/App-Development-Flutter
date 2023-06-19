@@ -52,7 +52,7 @@ class _CounterAppState extends State<CounterApp> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => SecondScreen(),
+            builder: (context) => const SecondScreen(),
           ),
         );
       }
