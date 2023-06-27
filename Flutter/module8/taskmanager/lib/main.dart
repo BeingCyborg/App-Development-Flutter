@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const TaskManagementApp());
 
 class TaskManagementApp extends StatelessWidget {
-  const TaskManagementApp({super.key});
+  const TaskManagementApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +19,9 @@ class TaskManagementApp extends StatelessWidget {
 }
 
 class TaskListScreen extends StatefulWidget {
-  const TaskListScreen({super.key});
+  const TaskListScreen({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _TaskListScreenState createState() => _TaskListScreenState();
 }
 
@@ -35,25 +34,85 @@ class _TaskListScreenState extends State<TaskListScreen> {
       appBar: AppBar(
         title: const Text('Task Management'),
       ),
-      body: ListView.builder(
-        itemCount: tasks.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(tasks[index].title),
-            subtitle: Text(tasks[index].description),
-            onTap: () => _showTaskDetails(context, tasks[index]),
-            onLongPress: () => _showBottomSheet(context, tasks[index]),
-          );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => _showAddTaskDialog(context),
-        child: const Icon(Icons.add),
+      body: Stack(
+        children: [
+          ListView.builder(
+            itemCount: tasks.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onLongPress: () => showTaskOptions(context, tasks[index]),
+                child: ListTile(
+                  title: Text(tasks[index].title),
+                  subtitle: Text(tasks[index].description),
+                  onTap: () => showTaskDetails(context, tasks[index]),
+                ),
+              );
+            },
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: FloatingActionButton(
+                onPressed: () => showAddTaskDialog(context),
+                child: const Icon(Icons.add),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  void _showAddTaskDialog(BuildContext context) {
+  void showTaskOptions(BuildContext context, Task task) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Task Details',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text('Task Name: ${task.title}'),
+              const SizedBox(height: 8),
+              Text('Description: ${task.description}'),
+              const SizedBox(height: 8),
+              Text('Remaining Days: ${task.daysRequired ?? 'N/A'}'),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  deleteTask(task);
+                  Navigator.of(context).pop();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text('Delete'),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void deleteTask(Task task) {
+    setState(() {
+      tasks.remove(task);
+    });
+  }
+
+  void showAddTaskDialog(BuildContext context) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -77,7 +136,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
               TextField(
                 decoration: const InputDecoration(labelText: 'Days Required'),
                 onChanged: (value) {
-                  // Parse the daysRequired as an integer from the text input
                   daysRequired = int.tryParse(value);
                 },
               ),
@@ -91,7 +149,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
             TextButton(
               child: const Text('Save'),
               onPressed: () {
-                // Add the new task to the task list
                 if (title != null && description != null) {
                   setState(() {
                     tasks.add(Task(
@@ -110,7 +167,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
     );
   }
 
-  void _showTaskDetails(BuildContext context, Task task) {
+  void showTaskDetails(BuildContext context, Task task) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -131,29 +188,6 @@ class _TaskListScreenState extends State<TaskListScreen> {
               onPressed: () => Navigator.of(context).pop(),
             ),
           ],
-        );
-      },
-    );
-  }
-
-  void _showBottomSheet(BuildContext context, Task task) {
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return SizedBox(
-          height: 100,
-          child: ListTile(
-            title: const Text('Delete Task'),
-            subtitle: const Text('Are you sure you want to delete this task?'),
-            trailing: const Icon(Icons.delete),
-            onTap: () {
-              // Delete the task from the task list
-              setState(() {
-                tasks.remove(task);
-              });
-              Navigator.of(context).pop();
-            },
-          ),
         );
       },
     );
