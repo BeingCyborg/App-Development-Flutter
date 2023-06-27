@@ -6,8 +6,9 @@ Features:
 2. View the Task with a single press
 3. Delete the task with a long press
 
-![image](https://github.com/BeingCyborg/OSTAD/assets/62154398/4fb8d5fd-be78-42a4-8a06-2a9b7beddca4)
-![Screenshot_1687900289](https://github.com/BeingCyborg/OSTAD/assets/62154398/f466d453-a927-4115-a3ad-1e3251db52eb)
-![Screenshot_1687900244](https://github.com/BeingCyborg/OSTAD/assets/62154398/f7815c68-2ad1-4065-8e3e-1eda90c0f09e)
-![Screenshot_1687900294](https://github.com/BeingCyborg/OSTAD/assets/62154398/06b14ff9-8f19-4aef-aec0-16d5ea12115e)
-![Screenshot_1687900301](https://github.com/BeingCyborg/OSTAD/assets/62154398/05031ab0-26b4-4d2b-83b3-b2727c6d206e)
+![image](https://github.com/BeingCyborg/OSTAD/assets/62154398/c6679c39-b429-43ad-bcfd-f138960c9786)
+![Screenshot_1687901459](https://github.com/BeingCyborg/OSTAD/assets/62154398/0edd5959-e433-4d4e-b87f-cc77237a4df0)
+![Screenshot_1687901466](https://github.com/BeingCyborg/OSTAD/assets/62154398/856adc11-c362-4d73-b70b-2f16e65fb620)
+![Screenshot_1687901474](https://github.com/BeingCyborg/OSTAD/assets/62154398/f509026e-6b8f-469c-a294-7e9e137c7477)
+![Screenshot_1687901480](https://github.com/BeingCyborg/OSTAD/assets/62154398/039e23e0-9c6e-48b7-8cb4-d1a1b89453ce)
+
