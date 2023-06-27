@@ -1,9 +1,9 @@
 # taskmanager
 This is a simple Task Manager App
-#Fetures 
+Features: 
 1. Add Task
-2. View Task with a single press
-3. delete task with a long press
+2. View the Task with a single press
+3. Delete the task with a long press
 
 ![image](https://github.com/BeingCyborg/OSTAD/assets/62154398/4fb8d5fd-be78-42a4-8a06-2a9b7beddca4)
 ![Screenshot_1687900289](https://github.com/BeingCyborg/OSTAD/assets/62154398/f466d453-a927-4115-a3ad-1e3251db52eb)
