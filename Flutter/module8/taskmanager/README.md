@@ -1,5 +1,6 @@
-# taskmanager
+# Task Manager
 This is a simple Task Manager App
+
 Features: 
 1. Add Task
 2. View the Task with a single press
