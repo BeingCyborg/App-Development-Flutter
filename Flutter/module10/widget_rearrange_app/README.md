@@ -1,16 +1,5 @@
 # widget_rearrange_app
+The following screen rearranges its widgets while changing orientation.
+![Screenshot_1689459978](https://github.com/BeingCyborg/OSTAD/assets/62154398/272a55fa-0599-410e-bf97-fcb50d17eb4d)
+![Screenshot_1689459959](https://github.com/BeingCyborg/OSTAD/assets/62154398/e90defa9-c2f3-4352-b1b3-cb87293dd72b)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
