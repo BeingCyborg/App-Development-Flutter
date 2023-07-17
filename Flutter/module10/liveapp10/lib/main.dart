@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(NewsFeedApp());
+  runApp(const NewsFeedApp());
 }
 
 class NewsFeedApp extends StatelessWidget {
@@ -9,7 +9,7 @@ class NewsFeedApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: NewsFeedScreen(),
     );
@@ -17,6 +17,8 @@ class NewsFeedApp extends StatelessWidget {
 }
 
 class NewsFeedScreen extends StatelessWidget {
+  const NewsFeedScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +46,8 @@ class NewsFeedList extends StatelessWidget {
     'image4.jpg',
   ];
 
+  NewsFeedList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -67,6 +71,8 @@ class NewsFeedGrid extends StatelessWidget {
     'image3.jpg',
     'image4.jpg',
   ];
+
+  NewsFeedGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
